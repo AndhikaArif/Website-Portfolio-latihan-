@@ -1,0 +1,425 @@
+/* General styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Hero section styling */
+.hero {
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/header-background.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Navigation styling */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 20px 10%;
+    position: fixed;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+}
+
+nav .profile-pic {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+nav .profile-pic img {
+    width: 100%;
+    height: auto;
+}
+
+nav h2 {
+    font-size: 24px;
+    color: #fff;
+}
+
+nav h2 span {
+    color: #e74c3c;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    transition: background 0.3s, color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #e74c3c;
+    color: white;
+    border-radius: 5px;
+}
+
+/* Contact section */
+.container {
+    text-align: center;
+    padding: 80px 10%;
+    margin-top: 100px; /* Offset to clear the fixed nav */
+}
+
+.container h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.container h2 {
+    font-size: 24px;
+    margin-bottom: 40px;
+    color: #ddd;
+}
+
+.contact-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.contact-text h2 {
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #333;
+}
+
+/* Social icons styling */
+.social-icons {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 400px;
+    margin-top: 20px;
+}
+
+.social-icons a {
+    transition: transform 0.3s ease, background 0.3s;
+}
+
+.social-icons img {
+    width: 50px;
+    height: auto;
+}
+
+.social-icons a:hover {
+    transform: scale(1.2);
+}
+
+/* Menu icon (for mobile) */
+#menu-icon {
+    display: none; /* Hidden on larger screens */
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Button styling */
+button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 12px 30px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background-color: #c0392b;
+}
+
+.content {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: white;
+    max-width: 900px;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.content h1 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.content p {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Responsive styling for tablet and smaller */
+@media (max-width: 768px) {
+    #menu-icon {
+        position: absolute;
+        top: 20px;  /* Jarak dari bagian atas */
+        right: 20px;  /* Jarak dari bagian kanan */
+        font-size: 30px;  /* Ukuran ikon */
+        color: white;  /* Warna ikon */
+        cursor: pointer;
+        z-index: 1000;  /* Pastikan berada di atas elemen lainnya */
+    }
+
+    .profile-pic{
+        display: none;
+    }
+
+    nav {
+        flex-direction: column;
+    }
+
+    nav ul {
+        display: none; /* Hide menu links */
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.9);
+        position: absolute;
+        top: 60px;
+        width: 100%;
+        padding: 10px;
+    }
+
+    nav ul.active {
+        display: flex;
+    }
+
+    #menu-icon {
+        display: block;
+    }
+
+    nav ul li {
+        text-align: center;
+        margin: 10px 0;
+    }
+
+    .container h1 {
+        font-size: 36px;
+    }
+
+    .container h2 {
+        font-size: 20px;
+    }
+
+    .contact-box {
+        padding: 20px;
+    }
+
+    .social-icons img {
+        width: 40px;
+    }
+
+    .content {
+        padding: 40px 15px;
+    }
+    .content h1 {
+        font-size: 28px;
+    }
+    .content p {
+        font-size: 16px;
+    }
+}
+
+/* Responsive styling for mobile */
+@media (max-width: 480px) {
+    #menu-icon {
+        position: absolute;
+        top: 20px;  /* Jarak dari bagian atas */
+        right: 20px;  /* Jarak dari bagian kanan */
+        font-size: 30px;  /* Ukuran ikon */
+        color: white;  /* Warna ikon */
+        cursor: pointer;
+        z-index: 1000;  /* Pastikan berada di atas elemen lainnya */
+    }
+
+    
+    .profile-pic{
+        display: none;
+    }
+
+    .container h1 {
+        font-size: 28px;
+    }
+
+    .container h2 {
+        font-size: 18px;
+    }
+
+    .social-icons img {
+        width: 35px;
+    }
+
+    .contact-box {
+        padding: 15px;
+    }
+
+    .content {
+        padding: 30px 10px;
+    }
+    .content h1 {
+        font-size: 24px;
+    }
+    .content p {
+        font-size: 14px;
+    }
+}
+
+
+/* ___________________________________________________________________________________________________________________ */
+
+/* About section styling */
+.about-hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+/* Skills section styling */
+.skills-section {
+    padding: 50px 10%;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+.skills-section h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+.skills-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.skills-list li {
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-align: left;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.skills-list li strong {
+    color: #e74c3c;
+}
+
+
+/* ___________________________________________________________________________________________________________________ */
+
+/* services section styling */
+.services-hero {
+    height: 100vh; /* Mengisi tinggi viewport */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Memusatkan konten secara vertikal */
+    align-items: center; /* Memusatkan konten secara horizontal */
+    text-align: center; /* Memusatkan teks */
+    color: white; /* Warna teks putih */
+    padding: 20px;
+}
+
+.services {
+    max-width: 800px; /* Membatasi lebar konten */
+    margin: 20px; /* Margin untuk ruang di sekitar konten */
+}
+
+.services h1 {
+    font-size: 42px; /* Ukuran font untuk judul */
+    margin-bottom: 20px; /* Spasi di bawah judul */
+}
+
+.services-list {
+    padding: 50px 10%; /* Ruang di sekitar daftar layanan */
+    background-color: #f4f4f4; /* Warna latar belakang untuk daftar layanan */
+}
+
+.service-item {
+    margin-bottom: 40px; /* Spasi antara item layanan */
+}
+
+.service-item h2 {
+    font-size: 28px; /* Ukuran font untuk judul layanan */
+    color: #333; /* Warna teks untuk judul layanan */
+    margin-bottom: 10px; /* Spasi di bawah judul layanan */
+}
+
+.service-item p {
+    font-size: 18px; /* Ukuran font untuk deskripsi layanan */
+    line-height: 1.6; /* Jarak antar baris */
+}
+
+/* ___________________________________________________________________________________________________________________ */
+
+/* Projects section styling */
+.gallery-container {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 8%;
+}
+
+.gallery-container h1 {
+    margin-bottom: 10px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 30px;
+}
+
+.gallery img{
+    width: 100%;
+}
+
+/* ___________________________________________________________________________________________________________________ */
+
+/* Projects footer styling */
